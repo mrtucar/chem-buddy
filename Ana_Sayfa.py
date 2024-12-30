@@ -1,6 +1,9 @@
 #pip install rag-kmk
 #pip install streamlit
 #streamlit run test.py
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 from chem_boddy.knowledge_base import build_knowledge_base, get_chroma_collection 
 from chem_boddy.vector_db import summarize_collection 
 from chem_boddy.chat_flow import RAG_LLM, generateAnswer
@@ -27,13 +30,14 @@ def main_interface():
     with col1:
         st.markdown("**❓ Soru Çözümleri ve Testler**")
         st.write("Kimya konularıyla ilgili soru çözümleri ve pratik testlerle kendinizi sınayın.")
-        st.button("Soru Çözümlerine Git", key="soru_button")
+        if st.button("Soru Çözümlerine Git", key="soru_button"):
+            st.switch_page("pages/02_Soru_Çözümü.py")
 
     with col2:
         st.markdown("**🤖 Kimya Sohbet Botu**")
         st.write("Kimya dersi ile ilgili merak ettiğiniz soruları sohbet botumuza sorabilirsiniz.")
         if st.button("Sohbet Botuna Git", key="chat_button"):
-            st.switch_page("pages/chatpage.py")
+            st.switch_page("pages/01_Sohbet_Botu.py")
 
     # # Load knowledge base
     # if "knowledge_base" not in st.session_state :
