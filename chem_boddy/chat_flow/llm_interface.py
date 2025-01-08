@@ -2,7 +2,7 @@ import google.generativeai as genai
 from chem_boddy.vector_db import retrieve_chunks
 import os
 import requests
-
+import streamlit as st
 
 
 def verify_api_key(api_key):
@@ -70,8 +70,7 @@ def check_env_file():
 
 
 def get_API_key():
-    os.environ['GEMINI_API_KEY'] = 'AIzaSyAr3g_xyt3QNiVNKj4iiadm1zJ4pZ-zQ4o'
-
+    os.environ['GEMINI_API_KEY'] = st.secrets["GEMINI_API_KEY"]
     print("-------"*3,"LOOKING FOR GOOGLE GEMINI KEY","-------"*3, "\n")
     
     GEMINI_API_KEY=check_environment_variables()
