@@ -10,7 +10,7 @@ def main_interface():
     
     # Giriş Metni ve Amacı
     st.write("""
-        Merhaba değerli İzmir Atatürk Lisesi öğrencileri! Bu web sitesi, kimya dersinde sizlere destek olmayı, 
+        Merhaba değerli A. Lisesi öğrencileri! Bu web sitesi, kimya dersinde sizlere destek olmayı, 
         öğrenme sürecinizi daha eğlenceli hale getirmeyi ve merak ettiğiniz sorulara cevap bulmanızı sağlamayı amaçlıyor.
         Burada, Kimya dersi konularını gözden geçirebilir, kavramları daha iyi kavrayabilir ve interaktif bir şekilde öğrenebilirsiniz.
         """)

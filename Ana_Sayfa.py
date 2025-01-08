@@ -1,9 +1,9 @@
 #pip install rag-kmk
 #pip install streamlit
 #streamlit run test.py
-#__import__('pysqlite3')
+__import__('pysqlite3')
 import sys
-#sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 from chem_boddy.knowledge_base import build_knowledge_base, get_chroma_collection 
 from chem_boddy.vector_db import summarize_collection 
 from chem_boddy.chat_flow import RAG_LLM, generateAnswer
@@ -18,7 +18,7 @@ def main_interface():
              )
     
     st.write("""
-        Merhaba değerli İzmir Atatürk Lisesi öğrencileri! Bu web sitesi, kimya dersinde sizlere destek olmayı, 
+        Merhaba değerli A. Lisesi öğrencileri! Bu web sitesi, kimya dersinde sizlere destek olmayı, 
         öğrenme sürecinizi daha eğlenceli hale getirmeyi ve merak ettiğiniz sorulara cevap bulmanızı sağlamayı amaçlıyor.
         Burada, Kimya dersi konularını gözden geçirebilir, kavramları daha iyi kavrayabilir ve interaktif bir şekilde öğrenebilirsiniz.
         """)
